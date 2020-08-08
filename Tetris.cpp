@@ -657,7 +657,7 @@ int main()
 	system("cls");
 	std::cout << "Game Over!" << std::endl;
 	std::cout << "Your score: " << score << std::endl;
-	
+	std::cin.get();
 
 	delete tetromino;
 
