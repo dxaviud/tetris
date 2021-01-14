@@ -1,3 +1,3 @@
 # tetris
 
-Small console Tetris game I made for fun.
+Console Tetris game I made for fun.
