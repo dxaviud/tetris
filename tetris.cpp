@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <Windows.h>
 #include <conio.h>
 #include <chrono>
@@ -10,6 +11,7 @@ int score = 0;
 
 const int screenWidth = 12;
 const int screenHeight = 18;
+const std::string leftPadding = "     ";
 
 char screen[screenHeight][screenWidth] = {
 	{'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
@@ -496,9 +498,10 @@ Tetromino* tetromino = getNextT(rand()%7);
 void display()
 {
 	system("cls");
-	std::cout << "  score: " << score << "\n" << std::endl;
+	std::cout << leftPadding << "score: " << score << "\n" << std::endl;
 	for (int y = 0; y < screenHeight; y++)
 	{
+		std::cout << leftPadding;
 		for (int x = 0; x < screenWidth; x++)
 		{
 			if (screen[y][x] == '=')
@@ -509,7 +512,7 @@ void display()
 		}
 		std::cout << std::endl;
 	}
-	std::cout << "\n  q to quit";
+	std::cout << std::endl << leftPadding << "q to quit";
 }
 
 void input()
@@ -635,10 +638,10 @@ Tetromino* getNextT(int i)
 int main()
 {
 
-	std::cout << "Welcome to Tetris!" << std::endl;
-	std::cout << "Controls: " << "a to move left, s to move down, d to move right" << std::endl;
-	std::cout << "o to rotate" << std::endl;
-	std::cout << "\nHit enter to begin game." << std::endl;
+	std::cout << leftPadding << "Welcome to Tetris!" << std::endl;
+	std::cout << leftPadding << "Controls: " << "a to move left, s to move down, d to move right" << std::endl;
+	std::cout << leftPadding << "o to rotate" << std::endl;
+	std::cout << std::endl << leftPadding << "Hit enter to begin game.";
 	std::cin.get();
 
 	timer_start(lowerTetromino, 1000);
@@ -647,14 +650,14 @@ int main()
 	{
 		display();
 		input();
-		Sleep(100);
+		Sleep(15);
 	}
 
 
 	
 	system("cls");
-	std::cout << "Game Over!" << std::endl;
-	std::cout << "Your score: " << score << std::endl;
+	std::cout << leftPadding << "Game Over!" << std::endl;
+	std::cout << leftPadding << "Your score: " << score << std::endl;
 	std::cin.get();
 
 	delete tetromino;
