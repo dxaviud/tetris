@@ -523,8 +523,7 @@ void input()
 		char ch = _getch();
 		if (ch == 'w')
 		{
-			if (!tetromino->collision(tetromino->x, tetromino->y - 1, tetromino->shape))
-				tetromino->y--;
+			//do nothing, can't move tetromino up
 		}
 		else if (ch == 's')
 		{
