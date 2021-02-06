@@ -637,7 +637,7 @@ Tetromino* getNextT(int i)
 
 int main()
 {
-
+	std::cout << std::endl << std::endl;
 	std::cout << leftPadding << "Welcome to Tetris!" << std::endl;
 	std::cout << leftPadding << "Controls: " << "a to move left, s to move down, d to move right" << std::endl;
 	std::cout << leftPadding << "o to rotate" << std::endl;
