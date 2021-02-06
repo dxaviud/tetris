@@ -1,11 +1,9 @@
-
-
 #include <iostream>
 #include <Windows.h>
 #include <conio.h>
 #include <chrono>
-#include <thread>
 #include <functional>
+#include <thread>
 
 bool quit = false;
 int score = 0;
@@ -549,7 +547,6 @@ void input()
 	}
 }
 
-
 void timer_start(std::function<void(void)> func, unsigned int interval)
 {
 	std::thread([func, interval]() {
@@ -558,9 +555,8 @@ void timer_start(std::function<void(void)> func, unsigned int interval)
 			std::this_thread::sleep_for(std::chrono::milliseconds(interval));
 			func();
 		}
-		}).detach();
+	}).detach();
 }
-
 
 void deleteLine(int y)
 {
@@ -631,6 +627,8 @@ Tetromino* getNextT(int i)
 		return new ZeeT();
 	case 6:
 		return new Zee2T();
+	default:
+		return new LineT();
 	}
 }
 
