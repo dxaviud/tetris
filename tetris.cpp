@@ -498,6 +498,7 @@ Tetromino* tetromino = getNextT(rand()%7);
 void display()
 {
 	system("cls");
+	std::cout << std::endl << std::endl;
 	std::cout << leftPadding << "score: " << score << "\n" << std::endl;
 	for (int y = 0; y < screenHeight; y++)
 	{
